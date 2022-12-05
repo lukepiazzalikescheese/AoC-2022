@@ -2,6 +2,8 @@ f = open('input.txt', 'r')
 buf = f.readlines()
 f.close()
 
+#Part 1
+
 total = 0
 maxelf = 0
 
@@ -17,3 +19,18 @@ for g in lst:
 
 
 print(maxelf)
+
+#Part 2
+
+elflst = []
+
+
+for h in lst:
+    if len(h)< 1:
+        elflst.append(int(total))
+        total = 0
+    else:
+        total += int(h)
+
+elflstprime = sorted(elflst, reverse = True)[1:4]
+print(sum(elflstprime))
